@@ -362,7 +362,7 @@ def train():
 	
 	wandb.init()
 	PARAMETERS = wandb.config
-	wandb.run.name = f"hl_{PARAMETERS['hidden_lyrs']}_bs_{PARAMETERS['neurons']}_ac_{PARAMETERS['activation']}"
+	wandb.run.name = f"lf_{PARAMETERS['loss_function']}_ac_{PARAMETERS['activation']}_opt_{PARAMETERS['optimizer']}_bs_{PARAMETERS['batch_sz']}_wi_{PARAMETERS['weight_initialisation']}_hl_{PARAMETERS['hidden_lyrs']}_sz_{PARAMETERS['neurons']}"
 	
 	x_train, y_train = load_data(PARAMETERS['dataset'], 'train')
 	np.random.seed(7)
